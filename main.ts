@@ -1,22 +1,31 @@
+namespace SpriteKind {
+    export const Cursor = SpriteKind.create()
+    export const Menu = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Menu, function (sprite, otherSprite) {
+    if (otherSprite == Lyle_Level) {
+        otherSprite.say("Lyle's Game")
+    }
+})
 function Menu () {
     Lyle_Level = sprites.create(img`
-        ffff.....ffff..ffff.ffff......ffffffffff
-        f11f.....f111ff111f.f11f......f11111111f
-        f11f......f111111f..f11f......f11111111f
-        f11f.......f1111f...f11f......f11fffffff
-        f11f........f11f....f11f......f11f......
-        f11f........f11f....f11f......f11f......
-        f11f........f11f....f11f......f11fffff..
-        f11f........f11f....f11f......f111111f..
-        f11f........f11f....f11f......f111111f..
-        f11f........f11f....f11f......f11fffff..
-        f11f........f11f....f11f......f11f......
-        f11f........f11f....f11f......f11f......
-        f11ffffff...f11f....f11ffffff.f11fffffff
-        f1111111f...f11f....f1111111f.f11111111f
-        f1111111f...f11f....f1111111f.f11111111f
-        fffffffff...ffff....fffffffff.ffffffffff
-        `, SpriteKind.Player)
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        d d d d d d 8 8 8 8 . . . . . . 
+        d d d d d d 8 9 9 9 8 . . . . . 
+        d d d d d d 8 9 9 9 9 8 . . . . 
+        d d d d d d 8 9 9 9 9 8 . . . . 
+        d d d d d d 8 8 8 8 8 8 8 8 8 5 
+        b b b b b b 8 8 8 8 8 8 8 8 8 8 
+        b b b f f b 8 8 8 8 8 f f 8 8 8 
+        b b f d d f 8 8 8 8 f d d f 8 8 
+        . b f d d f 8 8 8 8 f d d f 8 8 
+        . . . f f . . . . . . f f . . . 
+        `, SpriteKind.Menu)
     Lyle_Level.setPosition(38, 23)
     Cursor = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -35,7 +44,7 @@ function Menu () {
         . . . . . . . . . . . f . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.Cursor)
     controller.moveSprite(Cursor)
     Xavier_Level = sprites.create(img`
         . . . . . . . . . . . . . . . . 
