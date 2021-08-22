@@ -2,12 +2,7 @@ namespace SpriteKind {
     export const Cursor = SpriteKind.create()
     export const Menu = SpriteKind.create()
 }
-sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Menu, function (sprite, otherSprite) {
-    if (otherSprite == Lyle_Level) {
-        otherSprite.say("Lyle's Game")
-    }
-})
-function Menu () {
+function Menu2 () {
     Lyle_Level = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -64,9 +59,39 @@ function Menu () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
+    Sonia_Level = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
     scene.setBackgroundColor(9)
 }
+sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Menu, function (sprite, otherSprite) {
+    if (otherSprite == Lyle_Level) {
+        otherSprite.say("Lyle's Game")
+    }
+    if (otherSprite == Xavier_Level) {
+        otherSprite.say("Lyle's Game")
+    }
+    if (otherSprite == Sonia_Level) {
+        otherSprite.say("Lyle's Game")
+    }
+})
+let Sonia_Level: Sprite = null
 let Xavier_Level: Sprite = null
 let Cursor: Sprite = null
 let Lyle_Level: Sprite = null
-Menu()
+Menu2()
